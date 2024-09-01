@@ -5,6 +5,11 @@ const SPEED = 100.0
 @onready var APlayer : AnimationPlayer = get_node("AnimationPlayer")
 
 var entitiesDetected = []
+func _ready():
+	SceneManager.connect("LoadedNewScene", movePlayerToSpot)
+	
+func movePlayerToSpot(spot : Area2D):
+	self.position = spot.position
 
 func _physics_process(delta):
 	handleMovement()

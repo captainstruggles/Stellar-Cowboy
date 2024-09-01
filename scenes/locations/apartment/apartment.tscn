@@ -1,36 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://6m18k1o4pl74"]
+[gd_scene load_steps=3 format=3 uid="uid://csd8ai6is1bg3"]
 
-[ext_resource type="PackedScene" uid="uid://rvy80yljkl8j" path="res://scenes/tilemaps/ghetto/ghetto.tscn" id="1_cr70t"]
-[ext_resource type="PackedScene" uid="uid://ch5t3gfwxlxum" path="res://scenes/interactables/couch/Couch.tscn" id="2_1qoa5"]
-[ext_resource type="PackedScene" uid="uid://dxvpdv82pcy77" path="res://scenes/interactables/tv/TV.tscn" id="3_y8ipc"]
-[ext_resource type="PackedScene" uid="uid://bg6655gke2uwf" path="res://scenes/interactables/bed/bed.tscn" id="4_ydx07"]
-[ext_resource type="PackedScene" uid="uid://cgmq8rsli42rj" path="res://scenes/interactables/stove/Stove.tscn" id="5_a7gws"]
-[ext_resource type="PackedScene" uid="uid://cjkug4grost8n" path="res://scenes/interactables/fridge/Fridge.tscn" id="6_8b4rk"]
+[ext_resource type="PackedScene" uid="uid://rvy80yljkl8j" path="res://scenes/tilemaps/ghetto/ghetto.tscn" id="1_ry4af"]
 [ext_resource type="PackedScene" uid="uid://dvbg32p17e51e" path="res://scenes/locations/sceneTransporter/sceneTransporter.tscn" id="7_r0wkm"]
-[ext_resource type="PackedScene" uid="uid://cwnju85taroxa" path="res://scenes/locations/LowerVale/lowervale.tscn" id="8_talri"]
 
-[node name="appartment" type="Node2D"]
+[node name="apartment" type="Node2D"]
 
-[node name="ghetto" parent="." instance=ExtResource("1_cr70t")]
-layer_0/tile_data = PackedInt32Array(65535, 65536, 0, 0, 131072, 0, 65536, 131072, 0, 131072, 65536, 0, 196608, 65536, 0, 262144, 0, 0, 131071, 0, 0, 196607, 65536, 0, 262143, 65536, 0, 327679, 131072, 0, 262145, 131072, 0, 196609, 0, 0, 131073, 65536, 0, 65537, 131072, 0, 1, 65536, 0, 2, 0, 0, 3, 0, 0, 65539, 131072, 0, 131075, 65536, 0, 196610, 131072, 0, 262146, 131072, 0, 262147, 0, 0, 196611, 0, 0, 131074, 0, 0, 65538, 131072, 0, -1, 131072, 0, -65537, 131072, 0, -131072, 0, 0, -131071, 131072, 0, -65535, 0, 0, -65536, 0, 0, -2, 0, 0, -65538, 131072, 0, 65534, 131072, 0, 131070, 0, 0, 196606, 65536, 0, 262142, 131072, 0, 327678, 65536, 0, 65533, 0, 0, 131069, 65536, 0, 196605, 0, 0, 262141, 131072, 0, 327677, 131072, 0, 327676, 65536, 0, 327675, 131072, 0, 262139, 0, 0, 196603, 65536, 0, 131067, 0, 0, 65531, 65536, 0, 65532, 65536, 0, 131068, 0, 0, 196604, 0, 0, 262140, 131072, 0, -131073, 65536, 0)
-layer_1/tile_data = PackedInt32Array(327675, 262144, 2, 327676, 327680, 2, 327677, 327680, 2, 327678, 327680, 2, 327679, 327680, 2, 262144, 327680, 2, 262145, 327680, 2, 262146, 327680, 2, 262147, 393216, 2, 196611, 393216, 1, 131075, 393216, 1, 65539, 393216, 1, 3, 393216, 0, -131071, 393216, 0, -65538, 262144, 0, 65531, 262144, 0, 262139, 262144, 1, 196603, 262144, 1, 131067, 262144, 1, -2, 262144, 1, 65532, 327680, 0, 65533, 327680, 0, 2, 327680, 0, -65535, 393216, 1, -131074, 393216, 1, -196608, 262144, 1, -131072, 327680, 0)
-
-[node name="Couch" parent="." instance=ExtResource("2_1qoa5")]
-position = Vector2(-8, 67)
-
-[node name="TV" parent="." instance=ExtResource("3_y8ipc")]
-position = Vector2(-7, 24)
-
-[node name="Bed" parent="." instance=ExtResource("4_ydx07")]
-position = Vector2(52, 59)
-
-[node name="Stove" parent="." instance=ExtResource("5_a7gws")]
-position = Vector2(-50, 12)
-
-[node name="Fridge" parent="." instance=ExtResource("6_8b4rk")]
-position = Vector2(-67, 12)
+[node name="ghetto" parent="." instance=ExtResource("1_ry4af")]
+layer_0/tile_data = PackedInt32Array(-1, 0, 0, -65536, 65536, 0, -65535, 131072, 0, 65535, 0, 0, 0, 65536, 0, 1, 131072, 0, 131071, 0, 0, 65536, 65536, 0, 65537, 131072, 0, -131072, 65536, 0, -65534, 0, 0, -65533, 65536, 0, -65532, 131072, 0, 2, 0, 0, 3, 65536, 0, 4, 131072, 0, 65538, 0, 0, 65539, 65536, 0, 65540, 131072, 0, -65531, 0, 0, 5, 0, 0, 65541, 0, 0, 196607, 0, 0, 131072, 65536, 0, 131073, 131072, 0, 262143, 0, 0, 196608, 65536, 0, 196609, 131072, 0, 327679, 0, 0, 262144, 65536, 0, 262145, 131072, 0, 131074, 0, 0, 131075, 65536, 0, 131076, 131072, 0, 196610, 0, 0, 196611, 65536, 0, 196612, 131072, 0, 262146, 0, 0, 262147, 65536, 0, 262148, 131072, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 393215, 0, 0, 327680, 65536, 0, 327681, 131072, 0, 327682, 0, 0, 327683, 65536, 0, 327684, 131072, 0, 327685, 0, 0)
+layer_1/tile_data = PackedInt32Array(-1, 262144, 0, 65535, 262144, 1, 131071, 262144, 1, 196607, 262144, 1, 262143, 262144, 1, 327679, 262144, 1, 393215, 262144, 2, 327680, 327680, 2, 327681, 327680, 2, 327682, 327680, 2, 327683, 327680, 2, 327684, 327680, 2, 327685, 393216, 2, 5, 393216, 1, 65541, 393216, 1, 131077, 393216, 1, 196613, 393216, 1, 262149, 393216, 1, -65531, 393216, 0, -65535, 327680, 0, -65534, 327680, 0, -65533, 327680, 0, -65532, 327680, 0, -131071, 262144, 1, -65537, 393216, 1)
 
 [node name="sceneTransporter" parent="." instance=ExtResource("7_r0wkm")]
-position = Vector2(-8, -38)
-scene = ExtResource("8_talri")
-spot = "apartment"
+position = Vector2(7, -19)
+scene = "LowerVale"
+spot = "Apartment"

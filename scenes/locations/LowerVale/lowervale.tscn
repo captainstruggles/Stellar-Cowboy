@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwnju85taroxa"]
+[gd_scene load_steps=4 format=3 uid="uid://cwnju85taroxa"]
 
 [ext_resource type="PackedScene" uid="uid://rvy80yljkl8j" path="res://scenes/tilemaps/ghetto/ghetto.tscn" id="1_o42iw"]
 [ext_resource type="PackedScene" uid="uid://dvbg32p17e51e" path="res://scenes/locations/sceneTransporter/sceneTransporter.tscn" id="2_0gumw"]
+[ext_resource type="PackedScene" uid="uid://5smi0n411rw2" path="res://scenes/effects/sun/sun.tscn" id="3_lasd6"]
 
 [node name="lowervale" type="Node2D"]
 
@@ -14,3 +15,5 @@ layer_2/tile_data = PackedInt32Array(-262137, 65537, 0, -196616, 1, 0, -196615, 
 position = Vector2(7, 46)
 scene = "Apartment"
 spot = "Apartment"
+
+[node name="Sun" parent="." instance=ExtResource("3_lasd6")]

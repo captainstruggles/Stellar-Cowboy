@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" path="res://scenes/effects/sun/sun.gd" id="1_wffde"]
 
-[node name="Sun" type="DirectionalLight2D"]
-position = Vector2(4, 163)
+[node name="Sun" type="CanvasModulate"]
+color = Color(0.0745098, 0.0745098, 0.0745098, 1)
 script = ExtResource("1_wffde")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
 

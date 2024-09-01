@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5oygwmsskt5p"]
+
+[sub_resource type="Gradient" id="Gradient_q75tk"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hx5rt"]
+gradient = SubResource("Gradient_q75tk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ivbub"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 9.8, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color = Color(3, 3, 0.13, 1)
+color_initial_ramp = SubResource("GradientTexture1D_hx5rt")
+hue_variation_min = 1.0
+hue_variation_max = 1.0
+
+[node name="Sparks" type="GPUParticles2D"]
+position = Vector2(4, 163)
+process_material = SubResource("ParticleProcessMaterial_ivbub")
+lifetime = 3.0
+explosiveness = 1.0
+randomness = 1.0
+trail_lifetime = 0.6
+trail_sections = 2
+trail_section_subdivisions = 1

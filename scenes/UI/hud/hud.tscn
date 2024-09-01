@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://1krgqllluitq"]
+
+[ext_resource type="Script" path="res://scenes/UI/hud/HungerBar.gd" id="1_jf621"]
+[ext_resource type="Texture2D" uid="uid://r7mjaj0nsii2" path="res://scenes/UI/hud/progressBarBackground.png" id="1_p7gk5"]
+[ext_resource type="Texture2D" uid="uid://415evf245635" path="res://scenes/UI/hud/progressBarForeground.png" id="2_78b01"]
+[ext_resource type="Script" path="res://scenes/UI/hud/EnergyBar.gd" id="4_pbcom"]
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="Hunger" type="TextureProgressBar" parent="."]
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 53.0
+offset_bottom = 22.0
+scale = Vector2(2, 1)
+value = 100.0
+texture_under = ExtResource("1_p7gk5")
+texture_progress = ExtResource("2_78b01")
+tint_progress = Color(0, 1, 0, 1)
+script = ExtResource("1_jf621")
+
+[node name="Health" type="TextureProgressBar" parent="."]
+offset_left = 4.0
+offset_top = 23.0
+offset_right = 52.0
+offset_bottom = 40.0
+scale = Vector2(2, 1)
+value = 100.0
+texture_under = ExtResource("1_p7gk5")
+texture_progress = ExtResource("2_78b01")
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="Energy" type="TextureProgressBar" parent="."]
+offset_left = 4.0
+offset_top = 41.0
+offset_right = 52.0
+offset_bottom = 58.0
+scale = Vector2(2, 1)
+value = 100.0
+texture_under = ExtResource("1_p7gk5")
+texture_progress = ExtResource("2_78b01")
+tint_progress = Color(0, 0, 1, 1)
+script = ExtResource("4_pbcom")

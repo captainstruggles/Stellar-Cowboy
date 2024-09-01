@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cam4pgnanhycp"]
+
+[ext_resource type="AudioStream" uid="uid://crxfi8jbqg0ep" path="res://media/audio/buildings/shop_door.wav" id="1_y7ok0"]
+[ext_resource type="Script" path="res://scenes/effects/audio/audioPlayer.gd" id="2_30rwj"]
+
+[node name="shop_door" type="AudioStreamPlayer2D" node_paths=PackedStringArray("AudioLength")]
+stream = ExtResource("1_y7ok0")
+volume_db = -10.72
+pitch_scale = 1.27
+max_distance = 500.0
+script = ExtResource("2_30rwj")
+AudioLength = NodePath("AudioLength")
+
+[node name="AudioLength" type="Timer" parent="."]
+wait_time = 2.25
+one_shot = true
+
+[connection signal="timeout" from="AudioLength" to="." method="_on_audio_length_timeout"]

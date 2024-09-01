@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1qy6bb3mbgbc"
+path="res://.godot/imported/WBA Free Track - Journey to Titan.mp3-07538b6f5f1f9167fb012d5058545cff.mp3str"
+
+[deps]
+
+source_file="res://scenes/UI/MainMenu/Journey to Titan - Karl Casey @ White Bat Audio/WBA Free Track - Journey to Titan.mp3"
+dest_files=["res://.godot/imported/WBA Free Track - Journey to Titan.mp3-07538b6f5f1f9167fb012d5058545cff.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

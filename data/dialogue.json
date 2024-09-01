@@ -1,0 +1,20 @@
+{
+	"Dude Bro": {
+		"Intro": ["Hey bro. I'm the Dude Bro",
+				  "Come back to me if you need a job."],
+		"GigStart" : ["I have a package that needs to be picked up for a client.",
+					  "Sending you the details now"],
+		"GigWaiting" : ["I'm still waiting on the package to get sent.",
+						"Come back when the job is done."],
+		"GigFinished" : ["Great job on that gig. Customer is happy.",
+						 "Money was sent to your account"],
+		"Default" : [],
+	},
+	"Man": {
+		"Intro": ["Hey, I'm the man!"],
+		"GigStart" : [],
+		"GigWaiting" : [],
+		"GigFinished" : [],
+		"Default" : ["Want some grub?"],
+	}
+}

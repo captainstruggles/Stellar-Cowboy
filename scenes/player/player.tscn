@@ -1,0 +1,173 @@
+[gd_scene load_steps=16 format=3 uid="uid://b3o4jyr6awo6r"]
+
+[ext_resource type="Texture2D" uid="uid://dp5yxue86jvmd" path="res://media/sprite/npc/human/human-sheet.png" id="1_pu7dd"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_v6xyh"]
+[ext_resource type="Texture2D" uid="uid://dji001m4nadpw" path="res://media/sprite/npc/human/clothing/shirt.png" id="3_aef85"]
+[ext_resource type="Texture2D" uid="uid://dts8nxcrblxhn" path="res://media/sprite/npc/human/clothing/pants.png" id="4_wi0xs"]
+[ext_resource type="Script" path="res://scenes/player/Camera2D.gd" id="5_qxtxf"]
+[ext_resource type="Script" path="res://scenes/player/Hunger.gd" id="6_5mli3"]
+[ext_resource type="Script" path="res://scenes/player/Energy.gd" id="7_as1g1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iau5c"]
+radius = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnwbl"]
+size = Vector2(4, 10)
+
+[sub_resource type="Animation" id="Animation_cfio2"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Clothing:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Pants:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lukl1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_tfmnx"]
+resource_name = "Walk"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Clothing:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Pants:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r0hy1"]
+_data = {
+"Idle": SubResource("Animation_cfio2"),
+"RESET": SubResource("Animation_lukl1"),
+"Walk": SubResource("Animation_tfmnx")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sebqu"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3g186"]
+polygon = PackedVector2Array(-5, -9, -5, 9, 5, 9, 5, -9)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_v6xyh")
+
+[node name="Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource("CircleShape2D_iau5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_rnwbl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r0hy1")
+}
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("1_pu7dd")
+hframes = 5
+
+[node name="Clothing" type="Sprite2D" parent="Body"]
+texture = ExtResource("3_aef85")
+hframes = 5
+frame = 4
+
+[node name="Pants" type="Sprite2D" parent="Body"]
+texture = ExtResource("4_wi0xs")
+hframes = 5
+frame = 4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("5_qxtxf")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+material = SubResource("CanvasItemMaterial_sebqu")
+occluder = SubResource("OccluderPolygon2D_3g186")
+
+[node name="Hunger" type="Timer" parent="."]
+autostart = true
+script = ExtResource("6_5mli3")
+
+[node name="Energy" type="Timer" parent="."]
+autostart = true
+script = ExtResource("7_as1g1")
+
+[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Detector" to="." method="_on_detector_body_exited"]
+[connection signal="timeout" from="Hunger" to="Hunger" method="_on_timeout"]
+[connection signal="timeout" from="Energy" to="Energy" method="_on_timeout"]

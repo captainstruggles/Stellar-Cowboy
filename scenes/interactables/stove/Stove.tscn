@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgmq8rsli42rj"]
+
+[ext_resource type="Script" path="res://scenes/interactables/stove/Stove.gd" id="1_a7nhy"]
+[ext_resource type="Texture2D" uid="uid://b21nfgeb2525m" path="res://scenes/interactables/stove/stove.png" id="2_4g6bi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsimh"]
+size = Vector2(16, 15)
+
+[node name="Stove" type="Area2D"]
+script = ExtResource("1_a7nhy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_4g6bi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_lsimh")

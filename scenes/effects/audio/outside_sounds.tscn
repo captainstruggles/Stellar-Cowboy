@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://rkelm6dk3j5s"]
+
+[ext_resource type="Script" path="res://scenes/effects/audio/outside_sounds.gd" id="1_udkgq"]
+
+[node name="OutsideSounds" type="Node2D"]
+script = ExtResource("1_udkgq")

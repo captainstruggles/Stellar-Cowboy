@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjt8xbbbqsejb"]
+
+[ext_resource type="Script" path="res://scenes/npc/npc.gd" id="1_bpv4f"]
+[ext_resource type="Texture2D" uid="uid://dp5yxue86jvmd" path="res://media/sprite/npc/human/human-sheet.png" id="1_ro3g5"]
+[ext_resource type="PackedScene" uid="uid://deqc23v4nq3xi" path="res://scenes/UI/NameLabel/name_label.tscn" id="3_gmi8h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yr1k8"]
+size = Vector2(8, 16)
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_bpv4f")
+NPCName = "Dude Bro"
+isGigGiver = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ro3g5")
+hframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yr1k8")
+
+[node name="NameLabel" parent="." instance=ExtResource("3_gmi8h")]

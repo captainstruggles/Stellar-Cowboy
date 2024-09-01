@@ -1,0 +1,2 @@
+buildings/shop_door = https://freesound.org/people/3bagbrew/sounds/57742/
+buildings/industrial_fan = https://freesound.org/people/DBS_Sounds/sounds/613158/

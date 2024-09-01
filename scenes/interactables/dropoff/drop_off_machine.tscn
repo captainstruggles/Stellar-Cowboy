@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dda2luqpjiocn"]
+
+[ext_resource type="Script" path="res://scenes/interactables/dropoff/drop_off_machine.gd" id="1_qepfa"]
+[ext_resource type="Texture2D" uid="uid://dbnuc84cl8dn7" path="res://scenes/interactables/dropoff/dropOffMachine.png" id="2_o8hnk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2yqa"]
+size = Vector2(14, 16)
+
+[node name="DropOffMachine" type="StaticBody2D"]
+script = ExtResource("1_qepfa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_o8hnk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e2yqa")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://5smi0n411rw2"]
+
+[ext_resource type="Script" path="res://scenes/effects/sun/sun.gd" id="1_wffde"]
+
+[node name="Sun" type="DirectionalLight2D"]
+position = Vector2(4, 163)
+script = ExtResource("1_wffde")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

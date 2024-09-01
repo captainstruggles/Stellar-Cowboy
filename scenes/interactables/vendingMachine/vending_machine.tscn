@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqc3sxwhntniy"]
+
+[ext_resource type="Script" path="res://scenes/interactables/vendingMachine/vending_machine.gd" id="1_8w8fu"]
+[ext_resource type="Texture2D" uid="uid://73tuedv4oim4" path="res://scenes/interactables/vendingMachine/vendingMachine.png" id="1_n7nsl"]
+[ext_resource type="PackedScene" uid="uid://b6p0kqhu1jqg" path="res://scenes/effects/light_source/light_source.tscn" id="2_xvl6j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvhdj"]
+size = Vector2(12, 16)
+
+[node name="VendingMachine" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_8w8fu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xvhdj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n7nsl")
+
+[node name="light_source" parent="." instance=ExtResource("2_xvl6j")]
+position = Vector2(-1, 24)
+scale = Vector2(0.5, 0.914063)
+color = Color(0, 1, 0, 1)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck557kujbm6d7"]
+
+[ext_resource type="Script" path="res://scenes/effects/loop_audio/loop_audio.gd" id="1_ykuma"]
+
+[node name="LoopAudio" type="AudioStreamPlayer2D"]
+position = Vector2(40, 120)
+autoplay = true
+script = ExtResource("1_ykuma")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

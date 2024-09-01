@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://gquv1hdn5tb5"]
+
+[ext_resource type="Script" path="res://scenes/effects/light_source/light_source.gd" id="1_on8y8"]
+
+[sub_resource type="Gradient" id="Gradient_3c2ct"]
+offsets = PackedFloat32Array(0.793548, 0.883871, 0.916129, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.0518519, 0.0518519, 0.0518519, 1, 0.0437182, 0.0437182, 0.0437182, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rxd3a"]
+gradient = SubResource("Gradient_3c2ct")
+fill = 1
+fill_from = Vector2(0.481651, 0.513761)
+
+[node name="IndoorLight" type="PointLight2D"]
+scale = Vector2(0.936, 1)
+texture = SubResource("GradientTexture2D_rxd3a")
+script = ExtResource("1_on8y8")
+
+[node name="Flicker" type="Timer" parent="."]
+one_shot = true
+
+[node name="Dimmer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Flicker" to="." method="_on_flicker_timeout"]
+[connection signal="timeout" from="Dimmer" to="." method="_on_dimmer_timeout"]

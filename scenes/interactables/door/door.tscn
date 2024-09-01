@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://c57oq3t556vun"]
+
+[ext_resource type="Script" path="res://scenes/interactables/door/door.gd" id="1_7t0x4"]
+[ext_resource type="Texture2D" uid="uid://die51nngvq3f0" path="res://scenes/interactables/door/door.png" id="1_mr8vn"]
+
+[sub_resource type="Animation" id="Animation_k31my"]
+resource_name = "Close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pejk1"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jstah"]
+_data = {
+"Close": SubResource("Animation_k31my"),
+"Open": SubResource("Animation_pejk1")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5k6y"]
+size = Vector2(16, 16)
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_7t0x4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mr8vn")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_jstah")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o5k6y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

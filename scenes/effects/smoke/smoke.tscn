@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://drtrqk5rsw4ts"]
+
+[ext_resource type="Texture2D" uid="uid://gxs7m3p8xugv" path="res://scenes/effects/smoke/smoke.png" id="1_rw6ps"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rrp3v"]
+emission_shape = 1
+emission_sphere_radius = 5.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, -10, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = 45.0
+angle_max = 45.0
+turbulence_noise_strength = 5.0
+turbulence_noise_scale = 10.0
+
+[node name="Smoke" type="GPUParticles2D"]
+position = Vector2(41, 118)
+process_material = SubResource("ParticleProcessMaterial_rrp3v")
+texture = ExtResource("1_rw6ps")
+lifetime = 3.0
+trail_enabled = true
+trail_lifetime = 1.0

@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://cin7tk0sltjyn"]
+
+[ext_resource type="Script" path="res://scenes/UI/MainMenu/MainMenu.gd" id="1_3r13p"]
+[ext_resource type="PackedScene" uid="uid://ck557kujbm6d7" path="res://scenes/effects/loop_audio/loop_audio.tscn" id="2_mg5n0"]
+[ext_resource type="AudioStream" uid="uid://b1qy6bb3mbgbc" path="res://scenes/UI/MainMenu/Journey to Titan - Karl Casey @ White Bat Audio/WBA Free Track - Journey to Titan.mp3" id="3_tbgsn"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3r13p")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_top = 116.0
+offset_right = 59.0
+offset_bottom = 142.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Stellar Cowboy"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -68.0
+offset_right = 48.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="New Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "New Game
+"
+
+[node name="Load Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Load Game
+"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Options
+"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Credit
+"
+
+[node name="LoopAudio" parent="." instance=ExtResource("2_mg5n0")]
+stream = ExtResource("3_tbgsn")
+volume_db = -9.399
+
+[connection signal="pressed" from="VBoxContainer/New Game" to="." method="_on_new_game_pressed"]

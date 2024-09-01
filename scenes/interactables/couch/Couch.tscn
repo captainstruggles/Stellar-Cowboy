@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch5t3gfwxlxum"]
+
+[ext_resource type="Script" path="res://scenes/interactables/couch/Couch.gd" id="1_8wn8i"]
+[ext_resource type="Texture2D" uid="uid://bw4o8vhssioqo" path="res://scenes/interactables/couch/couch.png" id="2_0qf0x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsimh"]
+size = Vector2(46, 12)
+
+[node name="Couch" type="Area2D"]
+script = ExtResource("1_8wn8i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0qf0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_lsimh")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://6mgos4kdfvwt"]
+
+[ext_resource type="AudioStream" uid="uid://bp8cehlxcwyil" path="res://media/audio/buildings/industrial_fan.wav" id="1_spl1v"]
+[ext_resource type="Script" path="res://scenes/effects/audio/audioPlayer.gd" id="2_1k8ka"]
+
+[node name="Industrial_Fan" type="AudioStreamPlayer2D"]
+position = Vector2(39, 119)
+stream = ExtResource("1_spl1v")
+volume_db = -15.848
+max_distance = 500.0
+script = ExtResource("2_1k8ka")
+Loop = true

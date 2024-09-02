@@ -9,4 +9,4 @@ func _on_new_game_pressed():
 	var newPlayer = player.instantiate()
 	get_tree().root.add_child(newPlayer)
 	#SceneManager.currentSpot = "Apartment"
-	SceneManager.LoadNewScene("Apartment", "Apartment")
+	SceneManager.LoadNewScene("Apartment", "LowerValeApartment")

@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://csd8ai6is1bg3"]
 
-[ext_resource type="PackedScene" uid="uid://rvy80yljkl8j" path="res://scenes/tilemaps/ghetto/ghetto.tscn" id="1_ry4af"]
-[ext_resource type="PackedScene" uid="uid://dvbg32p17e51e" path="res://scenes/locations/sceneTransporter/sceneTransporter.tscn" id="7_r0wkm"]
+[ext_resource type="PackedScene" uid="uid://rvy80yljkl8j" path="res://scenes/tilemaps/ghetto/ghetto.tscn" id="1_bs1ma"]
+[ext_resource type="PackedScene" uid="uid://dvbg32p17e51e" path="res://scenes/locations/sceneTransporter/sceneTransporter.tscn" id="2_0drml"]
 
 [node name="apartment" type="Node2D"]
 
-[node name="ghetto" parent="." instance=ExtResource("1_ry4af")]
+[node name="ghetto" parent="." instance=ExtResource("1_bs1ma")]
 layer_0/tile_data = PackedInt32Array(-1, 0, 0, -65536, 65536, 0, -65535, 131072, 0, 65535, 0, 0, 0, 65536, 0, 1, 131072, 0, 131071, 0, 0, 65536, 65536, 0, 65537, 131072, 0, -131072, 65536, 0, -65534, 0, 0, -65533, 65536, 0, -65532, 131072, 0, 2, 0, 0, 3, 65536, 0, 4, 131072, 0, 65538, 0, 0, 65539, 65536, 0, 65540, 131072, 0, -65531, 0, 0, 5, 0, 0, 65541, 0, 0, 196607, 0, 0, 131072, 65536, 0, 131073, 131072, 0, 262143, 0, 0, 196608, 65536, 0, 196609, 131072, 0, 327679, 0, 0, 262144, 65536, 0, 262145, 131072, 0, 131074, 0, 0, 131075, 65536, 0, 131076, 131072, 0, 196610, 0, 0, 196611, 65536, 0, 196612, 131072, 0, 262146, 0, 0, 262147, 65536, 0, 262148, 131072, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 393215, 0, 0, 327680, 65536, 0, 327681, 131072, 0, 327682, 0, 0, 327683, 65536, 0, 327684, 131072, 0, 327685, 0, 0)
 layer_1/tile_data = PackedInt32Array(-1, 262144, 0, 65535, 262144, 1, 131071, 262144, 1, 196607, 262144, 1, 262143, 262144, 1, 327679, 262144, 1, 393215, 262144, 2, 327680, 327680, 2, 327681, 327680, 2, 327682, 327680, 2, 327683, 327680, 2, 327684, 327680, 2, 327685, 393216, 2, 5, 393216, 1, 65541, 393216, 1, 131077, 393216, 1, 196613, 393216, 1, 262149, 393216, 1, -65531, 393216, 0, -65535, 327680, 0, -65534, 327680, 0, -65533, 327680, 0, -65532, 327680, 0, -131071, 262144, 1, -65537, 393216, 1)
 
-[node name="sceneTransporter" parent="." instance=ExtResource("7_r0wkm")]
+[node name="sceneTransporter" parent="." instance=ExtResource("2_0drml")]
 position = Vector2(7, -19)
 scene = "LowerVale"
 spot = "Apartment"

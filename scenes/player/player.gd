@@ -9,7 +9,7 @@ func _ready():
 	SceneManager.connect("LoadedNewScene", movePlayerToSpot)
 	
 func movePlayerToSpot(spot : Area2D):
-	self.position = spot.position
+	self.global_position = spot.global_position
 
 func _physics_process(delta):
 	handleMovement()

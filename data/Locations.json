@@ -1,6 +1,6 @@
 {
-	"Apartment": "res://scenes/locations/apartment/apartment.tscn",
+	"LowerValeApartment": "res://scenes/locations/LowerVale//Apartment/LVIntapartment.tscn",
 	"LowerVale" : "res://scenes/locations/LowerVale/lowervale.tscn",
-	"LowerValeBar" : "res://scenes/locations/LowerVale/lowervaleBar.tscn",
-	"LowerValeAbandonBuilding" : "res://scenes/locations/LowerVale/lowervaleAbandonBuilding.tscn",
+	"LowerValeBar" : "res://scenes/locations/LowerVale/Bar/LVIntBar.tscn",
+	"LowerValeAbandonBuilding" : "res://scenes/locations/LowerVale/Abandoned/LVIntAbandon.tscn",
 }

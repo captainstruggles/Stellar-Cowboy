@@ -10,7 +10,6 @@ size = Vector2(8, 16)
 [node name="NPC" type="CharacterBody2D"]
 script = ExtResource("1_bpv4f")
 NPCName = "Dude Bro"
-isGigGiver = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ro3g5")

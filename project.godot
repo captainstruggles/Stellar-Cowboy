@@ -24,6 +24,7 @@ EventManager="*res://singleton/EventManager.gd"
 GigManager="*res://singleton/GigManager.gd"
 GameData="*res://singleton/GameData.gd"
 SceneManager="*res://singleton/SceneManager.gd"
+NpcManager="*res://singleton/NPCManager.gd"
 
 [input]
 

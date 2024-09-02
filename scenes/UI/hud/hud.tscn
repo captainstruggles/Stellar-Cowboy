@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://1krgqllluitq"]
+[gd_scene load_steps=6 format=3 uid="uid://1krgqllluitq"]
 
 [ext_resource type="Script" path="res://scenes/UI/hud/HungerBar.gd" id="1_jf621"]
 [ext_resource type="Texture2D" uid="uid://r7mjaj0nsii2" path="res://scenes/UI/hud/progressBarBackground.png" id="1_p7gk5"]
 [ext_resource type="Texture2D" uid="uid://415evf245635" path="res://scenes/UI/hud/progressBarForeground.png" id="2_78b01"]
 [ext_resource type="Script" path="res://scenes/UI/hud/EnergyBar.gd" id="4_pbcom"]
+[ext_resource type="PackedScene" uid="uid://c8s6fku1c1m5n" path="res://scenes/UI/hud/quest_tracker/quest_tracker.tscn" id="5_4khvv"]
 
 [node name="Hud" type="CanvasLayer"]
 
@@ -41,3 +42,11 @@ texture_under = ExtResource("1_p7gk5")
 texture_progress = ExtResource("2_78b01")
 tint_progress = Color(0, 0, 1, 1)
 script = ExtResource("4_pbcom")
+
+[node name="QuestTracker" parent="." instance=ExtResource("5_4khvv")]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_vertical = 2

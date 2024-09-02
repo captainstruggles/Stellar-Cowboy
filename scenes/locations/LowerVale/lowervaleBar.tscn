@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://boo3g2tdqcp1u"]
+
+[ext_resource type="PackedScene" uid="uid://rvy80yljkl8j" path="res://scenes/tilemaps/ghetto/ghetto.tscn" id="1_ul32f"]
+[ext_resource type="PackedScene" uid="uid://bjt8xbbbqsejb" path="res://scenes/npc/npc.tscn" id="2_kf2yt"]
+[ext_resource type="PackedScene" uid="uid://dvbg32p17e51e" path="res://scenes/locations/sceneTransporter/sceneTransporter.tscn" id="3_1cpwa"]
+
+[node name="lowervaleBar" type="Node2D"]
+
+[node name="ghetto" parent="." instance=ExtResource("1_ul32f")]
+layer_0/tile_data = PackedInt32Array(-131074, 0, 0, -131073, 65536, 0, -196608, 131072, 0, -65538, 0, 0, -65537, 65536, 0, -131072, 131072, 0, -2, 0, 0, -1, 65536, 0, -65536, 131072, 0, 65534, 0, 0, 65535, 65536, 0, 0, 131072, 0, -196607, 0, 0, -196606, 65536, 0, -196605, 131072, 0, -131071, 0, 0, -131070, 65536, 0, -131069, 131072, 0, -65535, 0, 0, -65534, 65536, 0, -65533, 131072, 0, 1, 0, 0, 2, 65536, 0, 3, 131072, 0, -196604, 0, 0, -196603, 65536, 0, -196602, 131072, 0, -131068, 0, 0, -131067, 65536, 0, -131066, 131072, 0, -65532, 0, 0, -65531, 65536, 0, -65530, 131072, 0, 4, 0, 0, 5, 65536, 0, 6, 131072, 0, -196601, 0, 0, -131065, 0, 0, -65529, 0, 0, 7, 0, 0, 65536, 0, 0)
+layer_1/tile_data = PackedInt32Array(-131074, 262144, 0, -196601, 393216, 0, 7, 393216, 2, 65534, 262144, 2, -65529, 393216, 1, -131065, 393216, 1, -65538, 262144, 1, -2, 262144, 1, 65535, 327680, 2, 1, 327680, 2, 2, 327680, 2, 3, 327680, 2, 4, 327680, 2, 5, 327680, 2, 6, 327680, 2, -131073, 327680, 0, -196608, 327680, 0, -196607, 327680, 0, -196606, 327680, 0, -196605, 327680, 0, -196604, 327680, 0, -196603, 327680, 0, -196602, 327680, 0, 65537, 262144, 1, 131071, 393216, 1)
+
+[node name="NPC" parent="." instance=ExtResource("2_kf2yt")]
+position = Vector2(102, -27)
+NPCName = "Gary"
+IsGigGiver = true
+
+[node name="sceneTransporter" parent="." instance=ExtResource("3_1cpwa")]
+position = Vector2(7, 28)
+scene = "LowerVale"
+spot = "Bar"

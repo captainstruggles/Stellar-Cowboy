@@ -1,18 +1,21 @@
 extends Node
 
-var SceneMap = {
-	"Apartment" : "res://scenes/locations/apartment/apartment.tscn",
-	"LowerVale" : "res://scenes/locations/LowerVale/lowervale.tscn"
-	}
-	
+var LocationFile = "res://data/Locations.json"
+var SceneMap
 var MainUI = "res://scenes/UI/hud/hud.tscn"
 var IsMainMenuLoaded = false
+var CurrentSceneName : String
 var currentScene
 var currentSpot : String
 var transporters : Array[Area2D]
 var resetTransport = true
 
 signal LoadedNewScene(location : Area2D)
+
+func _ready():
+	var rawData = Utils.ReadFile(LocationFile)
+	SceneMap = JSON.parse_string(rawData)
+
 func LoadNewScene(spot : String, scene : String):
 	if !IsMainMenuLoaded:
 		var packedMenu = load(MainUI) as PackedScene
@@ -24,6 +27,7 @@ func LoadNewScene(spot : String, scene : String):
 		ClearTransporters()
 		currentSpot = spot
 		var packedScene = load(SceneMap[scene]) as PackedScene
+		CurrentSceneName = scene
 		var newScene = packedScene.instantiate()
 		add_child(newScene)
 		currentScene = newScene

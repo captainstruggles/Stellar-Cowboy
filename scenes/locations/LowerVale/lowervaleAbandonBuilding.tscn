@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgrumhn58of8h"]
+
+[ext_resource type="PackedScene" uid="uid://rvy80yljkl8j" path="res://scenes/tilemaps/ghetto/ghetto.tscn" id="1_v64c2"]
+[ext_resource type="PackedScene" uid="uid://boiiay5jp218x" path="res://scenes/utils/spawner/spawner.tscn" id="2_7lays"]
+[ext_resource type="PackedScene" uid="uid://dvbg32p17e51e" path="res://scenes/locations/sceneTransporter/sceneTransporter.tscn" id="3_cbpgv"]
+
+[node name="lowervaleAbandonBuilding" type="Node2D"]
+
+[node name="ghetto" parent="." instance=ExtResource("1_v64c2")]
+layer_0/tile_data = PackedInt32Array(-131075, 0, 0, -131074, 65536, 0, -131073, 131072, 0, -65539, 0, 0, -65538, 65536, 0, -65537, 131072, 0, -3, 0, 0, -2, 65536, 0, -1, 131072, 0, 65533, 0, 0, 65534, 65536, 0, 65535, 131072, 0, 131069, 0, 0, 131070, 65536, 0, 131071, 131072, 0, 196605, 0, 0, 196606, 65536, 0, 196607, 131072, 0, -196608, 0, 0, -196607, 65536, 0, -196606, 131072, 0, -131072, 0, 0, -131071, 65536, 0, -131070, 131072, 0, -65536, 0, 0, -65535, 65536, 0, -65534, 131072, 0, 0, 0, 0, 1, 65536, 0, 2, 131072, 0, 65536, 0, 0, 65537, 65536, 0, 65538, 131072, 0, 131072, 0, 0, 131073, 65536, 0, 131074, 131072, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 196608, 0, 0)
+layer_1/tile_data = PackedInt32Array(-131075, 262144, 0, -196605, 393216, 0, -131074, 327680, 0, -131073, 327680, 0, -196608, 327680, 0, -196607, 327680, 0, -196606, 327680, 0, 131075, 393216, 2, -131069, 393216, 1, -65533, 393216, 1, 3, 393216, 1, 65539, 393216, 1, -65539, 262144, 1, -3, 262144, 1, 65533, 262144, 1, 131069, 262144, 1, 196605, 262144, 2, 196606, 327680, 2, 196607, 327680, 2, 131073, 327680, 2, 131074, 327680, 2, 196609, 262144, 1, 262143, 393216, 1)
+
+[node name="spawner" parent="." instance=ExtResource("2_7lays")]
+position = Vector2(40, -23)
+
+[node name="sceneTransporter" parent="." instance=ExtResource("3_cbpgv")]
+position = Vector2(7, 60)
+scene = "LowerVale"
+spot = "Abandon"

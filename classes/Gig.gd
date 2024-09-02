@@ -1,14 +1,17 @@
 class_name Gig
 
-var NPC : CharacterBody2D
+var NPC : String
 var Name : String
-var Location : Node
-var Destination : Node
+var Scene : String
 var Reward : int
+var GigType : GigManager.GigTypes
+var Description : String
+var IsObjectiveAchieved : bool = false
 
-func _init(_name: String, _location : Node, _destination : Node, _reward : int, _npc : CharacterBody2D):
+func _init(_name: String, _description : String, _scene : String, _gigType : GigManager.GigTypes, _reward : int, _npc : String):
 	Name = _name
-	Location = _location
-	Destination = _destination
+	Scene = _scene
+	GigType = _gigType
 	Reward = _reward
 	NPC = _npc
+	Description = _description

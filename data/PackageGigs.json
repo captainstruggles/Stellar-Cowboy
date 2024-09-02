@@ -1,0 +1,10 @@
+{
+	"Easy": [
+		{
+			"Reward": 100,
+			"Name": "Package Handoff",
+			"Scene": "LowerValeAbandonBuilding",
+			"Description" : "Go to the abandoned building next to the Lower Vale Bar and pick up the package left there."
+		}
+	]
+}

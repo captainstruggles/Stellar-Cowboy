@@ -4,7 +4,7 @@ var currentGig : Gig
 
 func interact():
 	if currentGig:
-		if PlayerData.InventoryAdd(self):
+		if PlayerData.InventoryAdd("Package"):
 			currentGig.IsObjectiveAchieved = true
 			get_parent().remove_child(self)
 

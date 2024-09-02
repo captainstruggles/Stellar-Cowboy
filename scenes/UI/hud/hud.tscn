@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://1krgqllluitq"]
+[gd_scene load_steps=7 format=3 uid="uid://1krgqllluitq"]
 
 [ext_resource type="Script" path="res://scenes/UI/hud/HungerBar.gd" id="1_jf621"]
 [ext_resource type="Texture2D" uid="uid://r7mjaj0nsii2" path="res://scenes/UI/hud/progressBarBackground.png" id="1_p7gk5"]
 [ext_resource type="Texture2D" uid="uid://415evf245635" path="res://scenes/UI/hud/progressBarForeground.png" id="2_78b01"]
 [ext_resource type="Script" path="res://scenes/UI/hud/EnergyBar.gd" id="4_pbcom"]
 [ext_resource type="PackedScene" uid="uid://c8s6fku1c1m5n" path="res://scenes/UI/hud/quest_tracker/quest_tracker.tscn" id="5_4khvv"]
+[ext_resource type="PackedScene" uid="uid://b48rm3n0perrv" path="res://scenes/UI/hud/money/money.tscn" id="6_7csfx"]
 
 [node name="Hud" type="CanvasLayer"]
 
@@ -50,3 +51,9 @@ anchor_bottom = 0.5
 offset_top = -20.0
 offset_bottom = 20.0
 grow_vertical = 2
+
+[node name="Money" parent="." instance=ExtResource("6_7csfx")]
+offset_left = 2.0
+offset_top = 62.0
+offset_right = 102.0
+offset_bottom = 91.0

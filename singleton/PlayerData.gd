@@ -15,16 +15,18 @@ var HealthLevelCurrent : float = 100
 var HealthRate : float = 1
 signal HealthUpdated(amount : float)
 
-var Inventory : Array[Node]
+var Inventory : Array[String]
 var MaxInventorySize : int = 1
 
 var Credits : int = 0
+signal CreditsUpdated(credits : int)
 
 func _ready():
 	GigManager.connect("GigCompleted", _gigReward)
 	
 func _gigReward(gig : Gig):
 	Credits += gig.Reward
+	CreditsUpdated.emit(Credits)
 
 func HungerUpdate(amount : float):
 	HungerLevelCurrent += amount
@@ -44,14 +46,14 @@ func HealthUpdate(amount : float):
 		HealthLevelCurrent = HealthLevelMax
 	HealthUpdated.emit(HealthLevelCurrent)
 
-func InventoryAdd(item : Node) -> bool:
+func InventoryAdd(item : String) -> bool:
 	if Inventory.size() >= MaxInventorySize:
 		return false
 	else:
 		Inventory.append(item)
 		return true
 
-func InventoryRemove(requestedItem: Node):
+func InventoryRemove(requestedItem: String):
 	var x = 0
 	for item in Inventory:
 		if item == requestedItem:

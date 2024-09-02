@@ -42,8 +42,8 @@ func interact():
 			DialogManager.start_dialog(self, global_position, dialogue.GigWaiting)
 		elif currentGig && currentGig.IsObjectiveAchieved:
 			DialogManager.start_dialog(self, global_position, dialogue.GigFinished)
-			currentGig = null
 			GigManager.GigComplete(currentGig)
+			currentGig = null
 		else:
 			DialogManager.start_dialog(self, global_position, dialogue.Default)
 	elif DialogManager.currentNPCTalking == self:

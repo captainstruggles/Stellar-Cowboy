@@ -32,6 +32,8 @@ func _ready():
 func GigComplete(gig : Gig):
 	if GigLog.has(gig):
 		GigLog = Utils.removeItemFromArray(GigLog, gig)
+		if gig.GigType == GigTypes.PACKAGE_PICKUP:
+			PlayerData.InventoryRemove("Package")
 		GigCompleted.emit(gig)
 		GigLogUpdate.emit(GigLog)
 

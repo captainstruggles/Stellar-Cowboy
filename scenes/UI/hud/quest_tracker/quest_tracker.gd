@@ -7,8 +7,9 @@ var GigEntry : PackedScene = preload("res://scenes/UI/hud/quest_tracker/gig_entr
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GigManager.connect("GigLogUpdate", rebuildLogs)
+	destroyLogs()
 
-func destryLogs():
+func destroyLogs():
 	for child in GigLogs.get_children():
 		child.queue_free()
 
@@ -20,6 +21,6 @@ func createLogs(gigs : Array[Gig]):
 		
 
 func rebuildLogs(gigs : Array[Gig]):
-	destryLogs()
+	destroyLogs()
 	createLogs(gigs)
 	
